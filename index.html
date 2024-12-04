@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+        <label for="">Student</label>
+        <input type="radio" name="choose" value="student" />
+        <label for="">Instructor</label>
+        <input type="radio" name="choose" value="instructor" />
+        <button type="button" onclick="clickHandler()">ENTER</button>
+      </form>
+    </main>
+    <script>
+      function clickHandler() {
+        let username = document.querySelector("#name");
+        let role = document.querySelector('input[name="choose"]:checked');
+        console.log(username.value);
+        console.log(role.value);
+        localStorage.setItem("username", username.value);
+        localStorage.setItem("role", role.value);
+
+        location.href = "information.html";
+      }
+    </script>
+  </body>
+</html>
